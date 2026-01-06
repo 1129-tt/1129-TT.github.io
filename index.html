@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小贺的个人介绍</title>
+    <style>
+        h1, .c {
+            color: red;
+        }
+
+        body {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: white;
+            font-family: "微软雅黑", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3678db;
+            color: white;
+            padding: 12px;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .d {
+            color: green;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* 重点：美化表单元素边框 */
+        input, textarea {
+            width: 100%;
+            padding: 8px 10px; /* 调整内边距，让输入更舒适 */
+            box-sizing: border-box;
+            margin-top: 4px;
+            /* 基础边框样式：圆角+浅灰色边框 */
+            border: 1px solid #ddd;
+            border-radius: 6px; /* 圆角，更柔和 */
+            font-size: 15px; /* 统一字体大小 */
+            outline: none; /* 去掉默认的聚焦外边框 */
+            transition: border-color 0.3s ease; /* 边框变色过渡动画 */
+        }
+
+        /* 聚焦状态：边框变色，提升交互反馈 */
+        input:focus, textarea:focus {
+            border-color: #3678db; /* 与表头同色系，视觉统一 */
+            box-shadow: 0 0 0 2px rgba(54, 120, 219, 0.1); /* 轻微发光效果 */
+        }
+
+        textarea {
+            resize: vertical; /* 只允许垂直拉伸文本域 */
+            min-height: 100px; /* 给文本域设置最小高度 */
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #3678db;
+            color: white;
+            border: none;
+            border-radius: 6px; /* 按钮也统一圆角 */
+            cursor: pointer;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #286090;
+        }
+    </style>
+</head>
+<body>
+<h1>这就是不一样的我</h1>
+<h2 class="c"><strong>自拍中</strong></h2>
+<div id="img">
+    <img src="QQ图片20221011141746.jpg" alt="小贺的自拍" width="300">
+</div>
+
+<hr>
+<p>大家好！我叫小贺，今年20岁，是一名计算机专业的大学生。</p>
+<p>我喜欢编程、阅读和打篮球。我的座右铭是："学无止境，每天进步一点点。"</p>
+
+<h2><strong>我的技能</strong></h2>
+<ul>
+    <li>HTML 网页制作</li>
+    <li>Office 办公软件</li>
+    <li>Python 编程</li>
+    <li>摄影与修图</li>
+</ul>
+
+<h2><strong>我的学习计划</strong></h2>
+<ol>
+    <li>学习 HTML 基础</li>
+    <li>学习 CSS 样式</li>
+    <li>学习 JavaScript 交互</li>
+    <li>完成一个完整的网站项目</li>
+</ol>
+
+<strong>以下是我经常访问的网站:</strong><br>
+<a href="https://baidu.com">这是百度</a><br>
+
+<h2 class="c"><strong>联系我</strong></h2>
+<table border="1">
+    <tr>
+        <th>联系方式</th>
+        <th>内容</th>
+    </tr>
+    <tr>
+        <td>邮箱</td>
+        <td>2059@qq.com</td>
+    </tr>
+    <tr>
+        <td>电话</td>
+        <td>123456</td>
+    </tr>
+</table>
+
+<h2><strong>给我留言</strong></h2>
+<form>
+    <p class="d">
+        <label>你的名字：</label><br>
+        <input type="text" name="name" placeholder="请输入你的名字">
+    </p>
+    <p class="d">
+        <label>邮箱：</label><br>
+        <input type="email" name="email" placeholder="请输入你的邮箱">
+    </p>
+    <p class="d">
+        <label>留言内容：</label><br>
+        <textarea name="message" rows="4" placeholder="请输入你的留言"></textarea>
+    </p>
+    <p>
+        <button type="submit">提交</button>
+    </p>
+</form>
+</body>
+</html>
