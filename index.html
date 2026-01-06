@@ -5,100 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小贺的个人介绍</title>
     <style>
-        h1, .c {
-            color: red;
+        /* 全局样式重置与基础配置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* 主色调：柔和蓝（专业、沉稳） */
+            --primary-color: #4A90E2;
+            /* 辅助色1：暖珊瑚（活泼、有温度） */
+            --secondary-color: #F08080;
+            /* 辅助色2：薄荷绿（清新、舒适） */
+            --accent-color: #66BB6A;
+            /* 中性色：浅灰（背景） */
+            --bg-color: #F8F9FA;
+            /* 中性色：深灰（文本） */
+            --text-dark: #333333;
+            /* 中性色：中灰（次要文本） */
+            --text-medium: #666666;
+            /* 中性色：浅灰（边框、分割线） */
+            --border-color: #E0E0E0;
+            /* 圆角统一值 */
+            --border-radius: 8px;
+            /* 阴影效果 */
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         body {
-            max-width: 500px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 10px;
-            background-color: white;
-            font-family: "微软雅黑", Arial, sans-serif;
+            padding: 20px 15px;
+            background-color: var(--bg-color);
+            font-family: "微软雅黑", "PingFang SC", Arial, sans-serif;
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: var(--text-dark);
             text-align: left;
         }
 
-        th {
-            background-color: #3678db;
-            color: white;
-            padding: 12px;
+        /* 标题样式 */
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            text-align: center;
+            margin: 20px 0 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        tr:hover {
-            background-color: #f1f1f1;
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
         }
 
+        /* 特殊标题样式（原.c类） */
+        .title-highlight {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        /* 图片容器 */
+        #img {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #img img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #img img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 水平线 */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 25px 0;
+        }
+
+        /* 段落文本 */
+        p {
+            color: var(--text-medium);
+            margin: 12px 0;
+            text-indent: 2em;
+        }
+
+        /* 列表样式 */
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: var(--text-medium);
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* 链接样式 */
         a {
-            color: #e74c3c;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         a:hover {
+            color: #357ABD;
             text-decoration: underline;
         }
 
-        .d {
-            color: green;
-        }
-
+        /* 表格样式 */
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
-        td {
-            padding: 8px;
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px;
+            font-weight: 600;
             text-align: center;
         }
 
-        /* 重点：美化表单元素边框 */
-        input, textarea {
-            width: 100%;
-            padding: 8px 10px; /* 调整内边距，让输入更舒适 */
-            box-sizing: border-box;
-            margin-top: 4px;
-            /* 基础边框样式：圆角+浅灰色边框 */
-            border: 1px solid #ddd;
-            border-radius: 6px; /* 圆角，更柔和 */
-            font-size: 15px; /* 统一字体大小 */
-            outline: none; /* 去掉默认的聚焦外边框 */
-            transition: border-color 0.3s ease; /* 边框变色过渡动画 */
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-medium);
         }
 
-        /* 聚焦状态：边框变色，提升交互反馈 */
+        tr {
+            background-color: white;
+        }
+
+        tr:hover {
+            background-color: #F5F7FA;
+        }
+
+        /* 表单样式 */
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 20px 0;
+        }
+
+        .form-label {
+            color: var(--accent-color);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+        }
+
         input:focus, textarea:focus {
-            border-color: #3678db; /* 与表头同色系，视觉统一 */
-            box-shadow: 0 0 0 2px rgba(54, 120, 219, 0.1); /* 轻微发光效果 */
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
         }
 
         textarea {
-            resize: vertical; /* 只允许垂直拉伸文本域 */
-            min-height: 100px; /* 给文本域设置最小高度 */
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
         }
 
+        /* 按钮样式 */
         button {
-            padding: 8px 16px;
-            background-color: #3678db;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 6px; /* 按钮也统一圆角 */
+            border-radius: var(--border-radius);
             cursor: pointer;
-            font-size: 15px;
+            font-size: 16px;
+            font-weight: 500;
             transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
         }
 
         button:hover {
-            background-color: #286090;
+            background-color: #357ABD;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2, .title-highlight {
+                font-size: 1.3rem;
+            }
+
+            form {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
 <body>
 <h1>这就是不一样的我</h1>
-<h2 class="c"><strong>自拍中</strong></h2>
+<h2 class="title-highlight"><strong>自拍中</strong></h2>
 <div id="img">
-    <img src="xiaohe.jpg" alt="小贺的自拍" width="300">
+    <img src="QQ图片20221011141746.jpg" alt="小贺的自拍" width="300">
 </div>
 
 <hr>
@@ -121,11 +265,11 @@
     <li>完成一个完整的网站项目</li>
 </ol>
 
-<strong>以下是我经常访问的网站:</strong><br>
-<a href="https://baidu.com">这是百度</a><br>
+<p style="text-indent: 0;"><strong>以下是我经常访问的网站:</strong></p>
+<a href="https://baidu.com">这是百度</a>
 
-<h2 class="c"><strong>联系我</strong></h2>
-<table border="1">
+<h2 class="title-highlight"><strong>联系我</strong></h2>
+<table>
     <tr>
         <th>联系方式</th>
         <th>内容</th>
@@ -142,22 +286,21 @@
 
 <h2><strong>给我留言</strong></h2>
 <form>
-    <p class="d">
-        <label>你的名字：</label><br>
+    <p>
+        <label class="form-label">你的名字：</label>
         <input type="text" name="name" placeholder="请输入你的名字">
     </p>
-    <p class="d">
-        <label>邮箱：</label><br>
+    <p>
+        <label class="form-label">邮箱：</label>
         <input type="email" name="email" placeholder="请输入你的邮箱">
     </p>
-    <p class="d">
-        <label>留言内容：</label><br>
-        <textarea name="message" rows="4" placeholder="请输入你的留言"></textarea>
+    <p>
+        <label class="form-label">留言内容：</label>
+        <textarea name="message" placeholder="请输入你的留言"></textarea>
     </p>
     <p>
         <button type="submit">提交</button>
     </p>
 </form>
 </body>
-
 </html>
